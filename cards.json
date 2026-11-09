@@ -8,8 +8,8 @@
     {
       "word": "마름",
       "aliases": [],
-      "scene": "",
-      "easy": "",
+      "scene": "점순네는 마름이야. '나'의 집은 점순네 손에서 땅을 얻어 농사를 지어서, 늘 점순네 눈치를 보며 굽실거려.",
+      "easy": "땅 주인을 대신해서 농사짓는 땅을 관리하던 사람이야.",
       "reviewed": false,
       "entries": [
         {
@@ -17,62 +17,8 @@
           "pos": "",
           "type": "일반어",
           "level": "",
-          "definition": "이엉을 엮어서 말아 놓은 단.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=403851",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "일반어",
-          "level": "",
-          "definition": "이엉을 엮어서 말아 놓은 단을 세는 단위.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=408362",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "일반어",
-          "level": "",
-          "definition": "옷감이나 재목 따위를 치수에 맞도록 재거나 자름.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=144937",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "일반어",
-          "level": "",
           "definition": "지주를 대리하여 소작권을 관리하는 사람.",
           "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=144939",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "일반어",
-          "level": "",
-          "definition": "마름과의 한해살이풀. 진흙 속에 뿌리를 박고, 줄기는 물속에서 가늘고 길게 자라 물 위로 나오며 깃털 모양의 물뿌리가 있다. 잎은 줄기 꼭대기에 뭉쳐나고 삼각형이며, 잎자루에 공기가 들어 있는 불룩한 부낭(浮囊)이 있어서 물 위에 뜬다. 여름에 흰 꽃이 피고 열매는 핵과(核果)로 식용한다. 연못이나 늪에 나는데 한국, 일본, 중국 등지에 분포한다.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=80",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "일반어",
-          "level": "",
-          "definition": "‘마름’의 열매.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=40202",
-          "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "방언",
-          "level": "",
-          "definition": "‘청미래덩굴’의 방언",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=758279",
           "translations": {}
         },
         {
@@ -136,8 +82,8 @@
       "aliases": [
         "생이질"
       ],
-      "scene": "",
-      "easy": "",
+      "scene": "'나'가 울타리를 엮고 있는데 점순이가 와서 말을 걸어. '나'는 그게 바쁜 사람을 귀찮게 하는 쌩이질이라고 생각해.",
+      "easy": "바쁠 때 쓸데없는 일로 남을 귀찮게 구는 짓이야.",
       "reviewed": false,
       "entries": [
         {
@@ -154,7 +100,7 @@
     {
       "word": "배재",
       "aliases": [],
-      "scene": "",
+      "scene": "'나'의 집이 점순네 손에서 배재를 얻어 땅을 부친다고 나오는 부분에 쓰였어.",
       "easy": "",
       "reviewed": false,
       "entries": [
@@ -166,23 +112,14 @@
           "definition": "식물을 심어 가꿈.",
           "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=532765",
           "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "방언",
-          "level": "",
-          "definition": "‘울타리’의 방언",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=532764",
-          "translations": {}
         }
       ]
     },
     {
       "word": "면두",
       "aliases": [],
-      "scene": "",
-      "easy": "",
+      "scene": "점순네 수탉이 '나'의 수탉의 면두를 쪼아서 피가 나는 장면에 나와.",
+      "easy": "닭의 머리 위에 붙은 붉은 살 조각, 곧 볏을 사투리로 부르는 말이야.",
       "reviewed": false,
       "entries": [
         {
@@ -199,8 +136,8 @@
     {
       "word": "호드기",
       "aliases": [],
-      "scene": "",
-      "easy": "",
+      "scene": "점순이가 동백꽃이 핀 바윗돌 틈에 앉아서 호드기를 부는 장면에 나와.",
+      "easy": "봄에 물오른 버드나무 가지 껍질이나 짧은 밀짚으로 만든 피리야.",
       "reviewed": false,
       "entries": [
         {
@@ -211,23 +148,14 @@
           "definition": "봄철에 물오른 버드나무 가지의 껍질을 고루 비틀어 뽑은 껍질이나 짤막한 밀짚 토막 따위로 만든 피리.",
           "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=550204",
           "translations": {}
-        },
-        {
-          "source": "우리말샘",
-          "pos": "",
-          "type": "북한어",
-          "level": "",
-          "definition": "‘참오징어’의 북한어.",
-          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=322656",
-          "translations": {}
         }
       ]
     },
     {
       "word": "삭정이",
       "aliases": [],
-      "scene": "",
-      "easy": "",
+      "scene": "'나'가 산에서 소나무 삭정이를 따며 점순이를 어떻게 혼낼지 생각하는 장면에 나와.",
+      "easy": "살아 있는 나무에 붙은 채로 말라 죽은 가지야.",
       "reviewed": false,
       "entries": [
         {
