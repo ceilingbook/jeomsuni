@@ -1,0 +1,245 @@
+{
+  "updated": "2026-11-09",
+  "sources": [
+    "국립국어원 한국어기초사전",
+    "국립국어원 우리말샘"
+  ],
+  "cards": [
+    {
+      "word": "마름",
+      "aliases": [],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "이엉을 엮어서 말아 놓은 단.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=403851",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "이엉을 엮어서 말아 놓은 단을 세는 단위.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=408362",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "옷감이나 재목 따위를 치수에 맞도록 재거나 자름.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=144937",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "지주를 대리하여 소작권을 관리하는 사람.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=144939",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "마름과의 한해살이풀. 진흙 속에 뿌리를 박고, 줄기는 물속에서 가늘고 길게 자라 물 위로 나오며 깃털 모양의 물뿌리가 있다. 잎은 줄기 꼭대기에 뭉쳐나고 삼각형이며, 잎자루에 공기가 들어 있는 불룩한 부낭(浮囊)이 있어서 물 위에 뜬다. 여름에 흰 꽃이 피고 열매는 핵과(核果)로 식용한다. 연못이나 늪에 나는데 한국, 일본, 중국 등지에 분포한다.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=80",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "‘마름’의 열매.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=40202",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "방언",
+          "level": "",
+          "definition": "‘청미래덩굴’의 방언",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=758279",
+          "translations": {}
+        },
+        {
+          "source": "한국어기초사전",
+          "pos": "명사",
+          "type": "",
+          "level": "고급",
+          "definition": "(옛날에) 땅 주인을 대신하여 농지를 관리하는 사람.",
+          "link": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=51760",
+          "translations": {
+            "영어": {
+              "word": "supervisor of a tenant farm",
+              "dfn": "(archaic) A person who supervises tenants and manages farm land on behalf of its owner."
+            },
+            "일본어": {
+              "word": "マルム。こさくちかんりにん【小作地管理人】",
+              "dfn": "昔、地主に代わって農地を管理する人。"
+            },
+            "프랑스어": {
+              "word": "mareum, agent du propriétaire, gérant, régisseur",
+              "dfn": "(archaïque) Personne chargée de gérer des terres pour le compte de leur propriétaire."
+            },
+            "스페인어": {
+              "word": "mareum, supervisor de campo agrícola, administrador",
+              "dfn": "(ARCAICO) Persona que administra los terrenos agrícolas en lugar del propietario."
+            },
+            "아랍어": {
+              "word": "مشرف مزرعة المستأجر، خولي",
+              "dfn": "(في قديم الزمان) شخص يقوم بإدارة المزرعة نيابة عن صاحب الأرض"
+            },
+            "몽골어": {
+              "word": "сахиул",
+              "dfn": "(эрт цагт) газрын эзний оронд тариалангийн талбайг зохион байгуулдаг хүн."
+            },
+            "베트남어": {
+              "word": "mareum; cai tổng, cai điền",
+              "dfn": "(ngày xưa) Người quản lý ruộng đất thay địa chủ."
+            },
+            "타이어": {
+              "word": "มารึม",
+              "dfn": "(ในอดีต)คนที่ดูแลที่ดินเพาะปลูกแทนเจ้าของที่ดิน"
+            },
+            "인도네시아어": {
+              "word": "pengelola ladang",
+              "dfn": "(pada zaman dulu) orang yang mengelola lahan pertanian menggantikan pemilik tanah"
+            },
+            "러시아어": {
+              "word": "марым",
+              "dfn": "(архаизм) Человек, управляющий земельным участком вместо владельца."
+            },
+            "중국어": {
+              "word": "二东家，二地主",
+              "dfn": "(旧词)替土地主人管理农田的人。"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "word": "쌩이질",
+      "aliases": [
+        "생이질"
+      ],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "한창 바쁠 때에 쓸데없는 일로 남을 귀찮게 구는 짓.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=215400",
+          "translations": {}
+        }
+      ]
+    },
+    {
+      "word": "배재",
+      "aliases": [],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "식물을 심어 가꿈.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=532765",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "방언",
+          "level": "",
+          "definition": "‘울타리’의 방언",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=532764",
+          "translations": {}
+        }
+      ]
+    },
+    {
+      "word": "면두",
+      "aliases": [],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "방언",
+          "level": "",
+          "definition": "‘볏’의 방언",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=148908",
+          "translations": {}
+        }
+      ]
+    },
+    {
+      "word": "호드기",
+      "aliases": [],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "봄철에 물오른 버드나무 가지의 껍질을 고루 비틀어 뽑은 껍질이나 짤막한 밀짚 토막 따위로 만든 피리.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=550204",
+          "translations": {}
+        },
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "북한어",
+          "level": "",
+          "definition": "‘참오징어’의 북한어.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=322656",
+          "translations": {}
+        }
+      ]
+    },
+    {
+      "word": "삭정이",
+      "aliases": [],
+      "scene": "",
+      "easy": "",
+      "reviewed": false,
+      "entries": [
+        {
+          "source": "우리말샘",
+          "pos": "",
+          "type": "일반어",
+          "level": "",
+          "definition": "살아 있는 나무에 붙어 있는, 말라 죽은 가지.",
+          "link": "https://opendict.korean.go.kr/dictionary/view?sense_no=351519",
+          "translations": {}
+        }
+      ]
+    }
+  ]
+}
