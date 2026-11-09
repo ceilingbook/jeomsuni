@@ -1,9 +1,339 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>속정 깊은 점순이와 함께 읽는 동백꽃 낱말 카드</title>
+<style>
+  :root {
+    --bg: #fffdf7;
+    --text: #222222;
+    --muted: #5a5a5a;
+    --accent: #b85c00;
+    --accent-soft: #fff0dd;
+    --line: #e2d8c6;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 20px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    line-height: 1.8;
+  }
+  header, main, footer { max-width: 760px; margin: 0 auto; padding: 0.8rem 1rem; }
+  h1 { font-size: 1.4rem; line-height: 1.4; margin: 0.6rem 0 0.2rem; color: var(--accent); }
+  h2 { font-size: 1.1rem; margin: 1.2rem 0 0.4rem; }
+  p { margin: 0.4rem 0; }
+  .muted { color: var(--muted); font-size: 0.85rem; }
+  button, input {
+    font: inherit;
+    min-height: 3rem;
+    border-radius: 0.6rem;
+    border: 2px solid var(--line);
+    padding: 0.4rem 0.9rem;
+  }
+  button { background: var(--card); color: var(--text); cursor: pointer; }
+  button:hover, button:focus-visible { border-color: var(--accent); outline: none; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+  input { width: 100%; background: var(--card); color: var(--text); }
+  .row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.5rem 0; }
+  .row input { flex: 1 1 12rem; }
+  .chips button { min-height: 2.6rem; border-radius: 2rem; background: var(--accent-soft); }
+  .card {
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    padding: 0.8rem 1.1rem 1.1rem;
+    margin-top: 1rem;
+  }
+  .card h2.word { font-size: 2rem; margin: 0.2rem 0; color: var(--accent); }
+  .say { background: var(--accent-soft); border-radius: 0.8rem; padding: 0.5rem 0.9rem; }
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.05rem 0.6rem;
+    border-radius: 1rem;
+    border: 1px solid var(--line);
+    margin-right: 0.3rem;
+    background: #f3efe6;
+  }
+  .badge.warn { background: #ffe9e0; border-color: #e0b09a; }
+  .entry { border-top: 1px solid var(--line); padding: 0.5rem 0; }
+  .entry:first-of-type { border-top: none; }
+  footer { border-top: 1px solid var(--line); margin-top: 2rem; }
+  a { color: var(--accent); }
+</style>
 </head>
 <body>
-    <h1>안녕하세요! 제 깃허브 페이지입니다.</h1>
+
+<header>
+  <h1>속정 깊은 점순이와 함께 읽는<br>동백꽃 낱말 카드</h1>
+  <p class="muted">어려운 옛말이 나오면 여기서 찾아봐. 천천히 읽어도 괜찮아.</p>
+</header>
+
+<main>
+  <section aria-label="낱말 찾기">
+    <div class="row">
+      <input id="query" type="search" placeholder="궁금한 낱말을 써 봐" autocomplete="off" aria-label="낱말 검색">
+      <button id="searchBtn" class="primary" type="button">찾기</button>
+    </div>
+    <div class="row">
+      <button id="smaller" type="button" aria-label="글자 작게">가 −</button>
+      <button id="bigger" type="button" aria-label="글자 크게">가 +</button>
+    </div>
+  </section>
+
+  <section aria-label="낱말 목록">
+    <h2>동백꽃 낱말</h2>
+    <div id="chips" class="row chips"></div>
+  </section>
+
+  <section id="result" aria-live="polite"></section>
+</main>
+
+<footer>
+  <h2>출처와 이용 안내</h2>
+  <p class="muted">
+    이 사이트의 낱말 풀이와 번역은 국립국어원
+    <a href="https://krdict.korean.go.kr" target="_blank" rel="noopener">한국어기초사전</a>과
+    <a href="https://opendict.korean.go.kr" target="_blank" rel="noopener">우리말샘</a> 자료를 이용했으며,
+    <a href="https://creativecommons.org/licenses/by-sa/2.0/kr/" target="_blank" rel="noopener">크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스</a>에 따라 이용합니다.
+    이 자료를 바탕으로 만든 카드 데이터(cards.json)도 같은 라이선스로 공개합니다.
+  </p>
+  <p class="muted">이 사이트는 국립국어원과 공식적인 관계가 없습니다.</p>
+  <p class="muted">
+    쉬운 풀이와 설명은 사람이 쓰고, 확인을 마친 카드에만 '검수 완료'를 표시합니다.
+    이 사이트는 검색어를 AI나 서버로 보내지 않고 이 화면 안에서만 처리합니다.
+  </p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var LANG_ORDER = ["영어", "베트남어", "중국어", "일본어", "러시아어", "몽골어", "타이어",
+                    "인도네시아어", "프랑스어", "스페인어", "아랍어"];
+  var state = { cards: [], fontSize: 20 };
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) { node.className = className; }
+    if (text) { node.textContent = text; }
+    return node;
+  }
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, "").toLowerCase();
+  }
+
+  function visibleEntries(card) {
+    return (card.entries || []).filter(function (entry) { return !entry.blocked; });
+  }
+
+  function translationLanguages(card) {
+    var found = {};
+    visibleEntries(card).forEach(function (entry) {
+      Object.keys(entry.translations || {}).forEach(function (lang) { found[lang] = true; });
+    });
+    var langs = Object.keys(found);
+    langs.sort(function (a, b) {
+      var ia = LANG_ORDER.indexOf(a), ib = LANG_ORDER.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+    return langs;
+  }
+
+  // 낱말 찾기: 같은 낱말 → 조사가 붙은 말 → 일부만 쓴 말 순서로 찾는다.
+  function findCard(query) {
+    var q = normalize(query);
+    if (!q) { return null; }
+    var best = null;
+    var tests = [
+      function (name) { return name === q; },
+      function (name) { return q.indexOf(name) === 0; },
+      function (name) { return name.indexOf(q) >= 0; }
+    ];
+    for (var t = 0; t < tests.length && !best; t++) {
+      for (var i = 0; i < state.cards.length && !best; i++) {
+        var card = state.cards[i];
+        var names = [card.word].concat(card.aliases || []);
+        for (var n = 0; n < names.length; n++) {
+          if (tests[t](normalize(names[n]))) {
+            best = { card: card, usedAlias: n > 0 };
+            break;
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  function speak(text) {
+    if (!("speechSynthesis" in window)) { return; }
+    window.speechSynthesis.cancel();
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ko-KR";
+    utterance.rate = 0.85;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function renderEntries(card) {
+    var box = el("div");
+    box.appendChild(el("h2", "", "사전 풀이"));
+    var entries = visibleEntries(card);
+    if (entries.length === 0) {
+      box.appendChild(el("p", "muted", "사전 풀이를 준비하고 있어."));
+      return box;
+    }
+    entries.forEach(function (entry, index) {
+      var item = el("div", "entry");
+      var head = el("p");
+      head.appendChild(el("span", "badge", entry.source));
+      if (entry.pos) { head.appendChild(el("span", "badge", entry.pos)); }
+      if (entry.type) { head.appendChild(el("span", "badge", entry.type)); }
+      item.appendChild(head);
+      item.appendChild(el("p", "", (index + 1) + ". " + entry.definition));
+      box.appendChild(item);
+    });
+    return box;
+  }
+
+  function renderTranslation(card) {
+    var box = el("div");
+    box.appendChild(el("h2", "", "다른 나라 말로 보기"));
+    var langs = translationLanguages(card);
+    if (langs.length === 0) {
+      box.appendChild(el("p", "muted", "번역 준비 중"));
+      return box;
+    }
+    var out = el("div");
+    var row = el("div", "row");
+    langs.forEach(function (lang) {
+      var button = el("button", "", lang);
+      button.type = "button";
+      button.addEventListener("click", function () { showTranslation(out, card, lang); });
+      row.appendChild(button);
+    });
+    box.appendChild(row);
+    box.appendChild(out);
+    return box;
+  }
+
+  function showTranslation(out, card, lang) {
+    out.textContent = "";
+    out.appendChild(el("p", "muted", lang));
+    visibleEntries(card).forEach(function (entry) {
+      var t = (entry.translations || {})[lang];
+      if (!t) { return; }
+      var item = el("div", "entry");
+      if (t.word) { item.appendChild(el("p", "", t.word)); }
+      if (t.dfn) { item.appendChild(el("p", "muted", t.dfn)); }
+      out.appendChild(item);
+    });
+  }
+
+  function readAloudText(card) {
+    if (card.easy) { return card.word + ". " + card.easy; }
+    var entries = visibleEntries(card);
+    return entries.length ? card.word + ". " + entries[0].definition : card.word;
+  }
+
+  function showCard(found) {
+    var card = found.card;
+    var result = document.getElementById("result");
+    result.textContent = "";
+    var box = el("article", "card");
+
+    var top = el("p");
+    top.appendChild(el("span", card.reviewed ? "badge" : "badge warn",
+                       card.reviewed ? "검수 완료" : "검수 전"));
+    box.appendChild(top);
+    box.appendChild(el("h2", "word", card.word));
+
+    var say = "얘, 이 말이 궁금했니? 천천히 읽어 봐.";
+    if (found.usedAlias) { say = "사전에는 '" + card.word + "'(으)로 나와 있어. 그걸로 보여 줄게."; }
+    box.appendChild(el("p", "say", say));
+
+    var read = el("button", "", "소리 내어 읽기");
+    read.type = "button";
+    read.addEventListener("click", function () { speak(readAloudText(card)); });
+    var readRow = el("div", "row");
+    readRow.appendChild(read);
+    box.appendChild(readRow);
+
+    if (card.easy) {
+      box.appendChild(el("h2", "", "쉬운 풀이"));
+      box.appendChild(el("p", "", card.easy));
+    }
+    if (card.scene) {
+      box.appendChild(el("h2", "", "동백꽃에서는"));
+      box.appendChild(el("p", "", card.scene));
+    }
+    box.appendChild(renderEntries(card));
+    box.appendChild(renderTranslation(card));
+    result.appendChild(box);
+  }
+
+  function showMessage(text) {
+    var result = document.getElementById("result");
+    result.textContent = "";
+    result.appendChild(el("p", "card", text));
+  }
+
+  function search() {
+    var query = document.getElementById("query").value;
+    if (!normalize(query)) { return; }
+    var found = findCard(query);
+    if (found) { showCard(found); } else {
+      showMessage("'" + query.trim() + "'은(는) 아직 카드가 없어. 아래 낱말 중에서 골라 봐.");
+    }
+  }
+
+  function renderChips() {
+    var chips = document.getElementById("chips");
+    chips.textContent = "";
+    state.cards.forEach(function (card) {
+      var button = el("button", "", card.word);
+      button.type = "button";
+      button.addEventListener("click", function () {
+        document.getElementById("query").value = card.word;
+        showCard({ card: card, usedAlias: false });
+      });
+      chips.appendChild(button);
+    });
+  }
+
+  function changeFont(step) {
+    state.fontSize = Math.max(16, Math.min(32, state.fontSize + step));
+    document.documentElement.style.fontSize = state.fontSize + "px";
+  }
+
+  function load() {
+    fetch("cards.json", { cache: "no-store" })
+      .then(function (response) {
+        if (!response.ok) { throw new Error("load failed"); }
+        return response.json();
+      })
+      .then(function (data) {
+        state.cards = data.cards || [];
+        renderChips();
+      })
+      .catch(function () {
+        showMessage("카드를 불러오지 못했어. 잠시 뒤에 다시 열어 봐.");
+      });
+  }
+
+  document.getElementById("searchBtn").addEventListener("click", search);
+  document.getElementById("query").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") { search(); }
+  });
+  document.getElementById("bigger").addEventListener("click", function () { changeFont(2); });
+  document.getElementById("smaller").addEventListener("click", function () { changeFont(-2); });
+  load();
+})();
+</script>
 </body>
 </html>
